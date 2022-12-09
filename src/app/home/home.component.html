@@ -1,0 +1,61 @@
+<div class="container-md border border-primary border-2 rounded !justify !shadow mt-4 p-3">
+  <div class="row m-3">
+    <div class="col-md-6">
+      <button class="btn btn-primary" (click)="onAddCourseClick()">Add New Course</button>
+    </div>
+    <div class="col-md-6">
+      <div [hidden]="isDivHidden">
+       <input type="text" class="form-control" [(ngModel)]="newCourse">
+        &nbsp;
+        <button class="btn btn-info" (click)="onCreatedCourse()">Create Course</button>
+      </div>
+  </div>
+  </div>
+  <div class="row m-3">
+    <div class="col-md-12 mx-auto">
+      <table class="table table-striped border border-2 rounded">
+        <caption class="text-center"><h3>Course List</h3></caption>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>ID</th>
+          <th>Course</th>
+          <th>Start Date</th>
+          <th>Duration</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let courseItem of Courses; index as i">
+          <td>{{i+1}}.</td>
+          <td>{{courseItem.courseID}}</td>
+          <!-- <td>{{Courses[i].courseID}}</td> -->
+          <td>{{courseItem.courseTitle}}</td>
+          <td>{{courseItem.startDate | date:'d/M/yyyy' }}</td>
+          <td>{{courseItem.duration}} Days</td>
+          <td   class="text-center align-middle">
+            <div class="btn-goup">
+              &nbsp;
+              <button  class="btn btn-danger" (click)="onDeleteClick(courseItem.courseID)">Delete Course</button>
+              &nbsp;
+              <button class="btn btn-success" (click)="onEditClick(courseItem.courseID)">Edit Course</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+   <div  class="row">
+    <div class="col-md-12 text-center m-3">
+      <h4 *ngIf="isMessageHidden; else noMessage">{{message}}</h4>
+      <ng-template #noMessage>
+        <h4>No Course created</h4>
+      </ng-template>
+    </div>
+   </div>
+  </div>
+  <br>
+<!-- <app-test-comp></app-test-comp> -->
+
+

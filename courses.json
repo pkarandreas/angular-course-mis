@@ -1,0 +1,22 @@
+{
+  "courses": [
+    {
+      "courseID": 1000,
+      "courseTitle": "Intro to C#",
+      "startDate": "2023-01-08T00:00:00",
+      "duration": 10
+    },
+    {
+      "courseID": 1001,
+      "courseTitle": "Intro to VB.NET",
+      "startDate": "2023-02-08T00:00:00",
+      "duration": 5
+    },        
+     {
+      "courseID": 1002,
+      "courseTitle": "Intro to Web Development",
+      "startDate": "2023-02-02T00:00:00",
+      "duration": 12
+    }
+  ]
+}
